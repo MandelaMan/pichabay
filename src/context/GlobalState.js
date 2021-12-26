@@ -128,8 +128,6 @@ export const GlobalProvider = ({ children }) => {
 
       const res = await axios.post(`${baseURL}/users/register`, inputs, config);
 
-      console.log(res.data);
-
       if (!res.data.error) {
         localStorage.PLUD = encryptData(res.data.token);
 
@@ -137,6 +135,9 @@ export const GlobalProvider = ({ children }) => {
           checkLoginStatus();
 
           setLoadingStatus(false);
+
+          history.push("/");
+          window.location.reload();
         }, 200);
       }
     } catch (error) {}
@@ -144,7 +145,7 @@ export const GlobalProvider = ({ children }) => {
 
   async function logOutUser() {
     try {
-      localStorage.clear();
+      localStorage.removeItem("PLUD");
       window.location.reload();
 
       setTimeout(function () {
@@ -222,6 +223,7 @@ export const GlobalProvider = ({ children }) => {
     return () => {
       // cleanup;
     };
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -62,39 +62,39 @@ const Navigation = () => {
               <div className="utf-header-widget-item">
                 <div className="utf-header-notifications user-menu">
                   <div className="utf-header-notifications-trigger user-profile-title">
-                    <a href="#">
+                    <Link to="/">
                       <div className="user-avatar status-online">
                         <img src={me} alt="" />
                       </div>
                       <div className="user-name">
                         Hi,&nbsp;{user_info.username}!
                       </div>
-                    </a>
+                    </Link>
                   </div>
                   <div className="utf-header-notifications-dropdown-block">
                     <ul className="utf-user-menu-dropdown-nav">
                       {user_info.account_type === 1 && (
                         <li>
-                          <a href="#">
+                          <Link to="/">
                             <i className="icon-material-outline-dashboard"></i>
                             Dashboard
-                          </a>
+                          </Link>
                         </li>
                       )}
 
                       {user_info.account_type === 2 && (
                         <li>
-                          <a href="#">
+                          <Link to="/">
                             <i className="icon-material-outline-dashboard"></i>
                             Dashboard
-                          </a>
+                          </Link>
                         </li>
                       )}
 
                       <li>
-                        <a href="#">
+                        <Link to="/">
                           <i className="icon-feather-user"></i> Edit Profile
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <Link to="" onClick={() => logOutUser()}>
@@ -122,12 +122,9 @@ const Navigation = () => {
               style={{ display: isLoggedIn ? "none" : "" }}
             >
               <div className="utf-header-widget-item">
-                <a
-                  href="#utf-signin-dialog-block"
-                  className="popup-with-zoom-anim log-in-button"
-                >
+                <Link to="/login" className="log-in-button">
                   <i className="icon-feather-log-in"></i> <span>Log In</span>
-                </a>
+                </Link>
                 {/* <button className="popup-with-zoom-anim log-in-button">
                       <i className="icon-feather-log-in"></i>{" "}
                       <span>Log In</span>

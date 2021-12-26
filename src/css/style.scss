@@ -59,6 +59,21 @@
   font-size: 0.9em;
 }
 
+.login-signup-form {
+  width: 100%;
+  display: grid;
+  padding: 5% 0 !important;
+  place-items: center;
+  height: auto;
+
+  .form-box {
+    padding-top: 2%;
+    width: 35% !important;
+    min-height: 300px;
+    margin: 0 auto;
+  }
+}
+
 input,
 input[type="text"],
 input[type="password"],

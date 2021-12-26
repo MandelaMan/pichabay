@@ -13,7 +13,8 @@ import PhotographerDetails from "./pages/PhotographerDetails";
 import ScrollToTop from "./ScrollToTop";
 import Photographers from "./pages/Photographers";
 import PhotographerByCategory from "./pages/PhotographerByCategory";
-import LoginSignupupPopup from "./components/authorization/LoginSignupPopup";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
 import Navigation from "./components/layout/Navigation";
 import Loader from "./components/Loader";
 
@@ -36,6 +37,8 @@ const App = () => {
               component={PhotographerDetails}
             />
             <Route path="/photographers" exact component={Photographers} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/create-account" exact component={Register} />
             <Route
               path="/category/:category"
               exact
@@ -47,9 +50,7 @@ const App = () => {
               component={Photographers}
             />
           </Switch>
-          <Footer />
         </div>
-        <LoginSignupupPopup />
       </GlobalProvider>
     </>
   );

@@ -5,6 +5,7 @@ import OtherPhotographerLisiting from "../components/reusable/OtherPhotographerL
 import SearchBox from "../components/reusable/SearchBox";
 import { chosen_photographers, categories } from "../utils/data";
 import { GlobalContext } from "../context/GlobalState";
+import FooterLinks from "../components/layout/FooterLinks";
 
 const Photographers = () => {
   const { photographers } = useContext(GlobalContext);
@@ -151,6 +152,7 @@ const Photographers = () => {
           </div>
         </div>
       </div>
+      <FooterLinks />
     </>
   );
 };

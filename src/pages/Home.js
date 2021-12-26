@@ -8,6 +8,8 @@ import SearchBox from "../components/reusable/SearchBox";
 import OtherPhotographerLisiting from "../components/reusable/OtherPhotographerLisiting";
 
 import home from "../img/home-background.jpg";
+import FooterLinks from "../components/layout/FooterLinks";
+import Footer from "../components/layout/Footer";
 
 const Home = () => {
   const { photographers, user_info, home_photographers } =
@@ -222,6 +224,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <FooterLinks />
+      <Footer />
     </>
   );
 };

@@ -305,7 +305,7 @@ export const counties = [
   { id: "3", name: "Kilifi" },
   { id: "4", name: "Tana River" },
   { id: "5", name: "Lamu" },
-  { id: "6", name: "Taita/Taveta" },
+  { id: "6", name: "Taita Taveta" },
   { id: "7", name: "Garissa" },
   { id: "8", name: "Wajir" },
   { id: "9", name: "Mandera" },
@@ -346,5 +346,5 @@ export const counties = [
   { id: "44", name: "Migori" },
   { id: "45", name: "Kisii" },
   { id: "46", name: "Nyamira" },
-  { id: "47", name: "Nairobi City" },
+  { id: "47", name: "Nairobi" },
 ];

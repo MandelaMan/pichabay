@@ -6,6 +6,8 @@ import { categories, counties } from "./data";
 export const categoryName = (id) => {
   const category = categories.filter((item) => item.id === id);
 
+  console.log(id);
+
   return category.name;
 };
 

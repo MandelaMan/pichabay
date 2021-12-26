@@ -2,7 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import logo from "../../img/company_logo_1.png";
 import me from "../../img/me.png";
-import { sanitizeBookName } from "../../utils/helpers";
+import {
+  sanitizeBookName,
+  categoryName,
+  countyName,
+} from "../../utils/helpers";
 
 const OtherPhotographerLisiting = ({ p }) => {
   return (
@@ -24,11 +28,12 @@ const OtherPhotographerLisiting = ({ p }) => {
             <div className="utf-job-listing-footer">
               <ul>
                 <li>
-                  <i className="icon-feather-briefcase"></i> {p.categories}
+                  <i className="icon-feather-briefcase"></i>{" "}
+                  {p.actual_category_name}
                 </li>
                 <li>
                   <i className="icon-material-outline-location-on"></i>{" "}
-                  {p.location}
+                  {p.business_location_name}
                 </li>
               </ul>
             </div>

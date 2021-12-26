@@ -2,6 +2,7 @@ import React from "react";
 import Navigation from "../components/layout/Navigation";
 import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
+import FooterLinks from "../components/layout/FooterLinks";
 
 const ContactUs = () => {
   return (
@@ -24,6 +25,7 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+      <FooterLinks />
     </>
   );
 };
