@@ -3,9 +3,11 @@ import { Link, Redirect } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { GlobalContext } from "../../context/GlobalState";
 import Footer from "../../components/layout/Footer";
+import VerifyCode from "./VerifyCode";
 
 const Register = () => {
-  const { userRegistration, isLoading, isLoggedIn } = useContext(GlobalContext);
+  const { userRegistration, isLoading, isLoggedIn, user_info } =
+    useContext(GlobalContext);
 
   const { register, handleSubmit, errors, reset } = useForm();
 
@@ -16,9 +18,12 @@ const Register = () => {
   };
 
   if (isLoggedIn) {
-    let to = "/";
-
-    return <Redirect to={to} />;
+    if (user_info.email_verification) {
+      return <VerifyCode />;
+    } else {
+      let to = "/";
+      return <Redirect to={to} />;
+    }
   } else {
     return (
       <>
@@ -83,8 +88,8 @@ const Register = () => {
                           required: "Please choose one",
                         })}
                       >
-                        <option value="1">To book a photographer</option>
-                        {/* <option value="2">To sell my photography services</option> */}
+                        <option value="1">Book a photographer</option>
+                        <option value="2">Sell my photography services</option>
                       </select>
                     </div>
                     <div
@@ -135,9 +140,6 @@ const Register = () => {
                   </form>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-xl-4 col-12"></div>
             </div>
           </div>
         </div>

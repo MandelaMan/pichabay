@@ -90,7 +90,6 @@ const Navigation = () => {
                           </Link>
                         </li>
                       )}
-
                       <li>
                         <Link to="/">
                           <i className="icon-feather-user"></i> Edit Profile
@@ -126,18 +125,18 @@ const Navigation = () => {
                   <i className="icon-feather-log-in"></i> <span>Log In</span>
                 </Link>
                 {/* <button className="popup-with-zoom-anim log-in-button">
-                      <i className="icon-feather-log-in"></i>{" "}
-                      <span>Log In</span>
-                    </button> */}
+                 <i className="icon-feather-log-in"></i>{" "}
+                 <span>Log In</span>
+               </button> */}
               </div>
               {/* <div className="utf-header-widget-item">
-                    <a
-                      href="#utf-signin-dialog-block"
-                      className="join-us-button"
-                    >
-                      <span>Join Us Today</span>
-                    </a>
-                  </div> */}
+               <a
+                 href="#utf-signin-dialog-block"
+                 className="join-us-button"
+               >
+                 <span>Join Us Today</span>
+               </a>
+             </div> */}
             </div>
           </div>
         </div>

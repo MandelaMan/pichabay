@@ -12,7 +12,7 @@ const OtherPhotographerLisiting = ({ p }) => {
   return (
     <>
       <Link
-        to={`/photographer/${p.code}/${sanitizeBookName(p.name)}`}
+        to={`/photographer/${p.code}/${sanitizeBookName(p.business_name)}`}
         className="utf-job-listing utf-apply-button-item"
       >
         <div className="utf-job-listing-details">
@@ -24,7 +24,15 @@ const OtherPhotographerLisiting = ({ p }) => {
               <i className="icon-material-outline-business-center"></i> Full
               Time
             </span> */}
-            <h3 className="utf-job-listing-title">{p.name}</h3>
+            <h3 className="utf-job-listing-title">
+              {p.business_name}&nbsp;
+              <span
+                class="utf-verified-badge"
+                data-tippy-placement="top"
+                data-tippy=""
+                data-original-title="Verified"
+              ></span>
+            </h3>
             <div className="utf-job-listing-footer">
               <ul>
                 <li>

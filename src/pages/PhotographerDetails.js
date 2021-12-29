@@ -1,12 +1,26 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import { chosen_photographers, photographer } from "../utils/data";
 import OtherPhotographerLisiting from "../components/reusable/OtherPhotographerLisiting";
 import single_job from "../img/bg_user.jpg";
-import company_logo from "../img/company_logo_1.png";
+import portfolio1 from "../img/portfolio/portfolio1.jpg";
+import portfolio2 from "../img/portfolio/portfolio2.jpg";
+import portfolio3 from "../img/portfolio/portfolio3.jpg";
+import portfolio4 from "../img/portfolio/portfolio4.jpg";
+import portfolio5 from "../img/portfolio/portfolio5.jpg";
+
 import { Carousel } from "react-carousel-minimal";
 import me from "../img/me.png";
 import { GlobalContext } from "../context/GlobalState";
+import {
+  encryptData,
+  decryptData,
+  readJwt,
+  baseURL,
+  addCookie,
+  deleteCookie,
+} from "../utils/helpers";
 import PhotographerNotFound from "../components/reusable/PhotographerNotFound";
 
 const PhotographerDetails = (props) => {
@@ -14,44 +28,55 @@ const PhotographerDetails = (props) => {
 
   const [details, setDetails] = useState([]);
 
+  const getDetails = async (code, name) => {
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      const res = await axios.get(
+        `${baseURL}/photographers?code=${code}`,
+        config
+      );
+
+      setDetails(res.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   useEffect(() => {
-    setDetails(photographer);
+    getDetails(props.match.params.code, props.match.params.name);
 
     return () => {
       // cleanup;
     };
-  }, []);
+
+    // eslint-disable-next-line
+  }, [props.match.params.code, props.match.params.name]);
 
   const data = [
     {
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg",
+      image: portfolio1,
       caption: "San Francisco",
     },
     {
-      image:
-        "https://cdn.britannica.com/s:800x450,c:crop/35/204435-138-2F2B745A/Time-lapse-hyper-lapse-Isle-Skye-Scotland.jpg",
+      image: portfolio2,
       caption: "Scotland",
     },
     {
-      image:
-        "https://static2.tripoto.com/media/filter/tst/img/735873/TripDocument/1537686560_1537686557954.jpg",
-      caption: "Darjeeling",
-    },
-    {
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Palace_of_Fine_Arts_%2816794p%29.jpg/1200px-Palace_of_Fine_Arts_%2816794p%29.jpg",
+      image: portfolio3,
       caption: "San Francisco",
     },
     {
-      image:
-        "https://i.natgeofe.com/n/f7732389-a045-402c-bf39-cb4eda39e786/scotland_travel_4x3.jpg",
-      caption: "Scotland",
+      image: portfolio4,
+      caption: "San Francisco",
     },
     {
-      image:
-        "https://www.tusktravel.com/blog/wp-content/uploads/2020/07/Best-Time-to-Visit-Darjeeling-for-Honeymoon.jpg",
-      // caption: "Darjeeling",
+      image: portfolio5,
+      caption: "San Francisco",
     },
   ];
 
@@ -68,19 +93,19 @@ const PhotographerDetails = (props) => {
   return (
     <>
       <div className="single-page-header" data-background-image={single_job}>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="utf-single-page-header-inner-aera">
-                <div class="utf-left-side">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="utf-single-page-header-inner-aera">
+                <div className="utf-left-side">
                   <div className="utf-header-image">
                     <Link to="/">
                       <img src={me} alt="" />
                     </Link>
                   </div>
-                  <div class="utf-header-details">
+                  <div className="utf-header-details">
                     <h3>
-                      {details.name}
+                      {details.business_name}
                       <span
                         className="utf-verified-badge"
                         title="Verified"
@@ -88,31 +113,31 @@ const PhotographerDetails = (props) => {
                       ></span>
                     </h3>
                     <ul>
-                      <li>{details.location}</li>
+                      <li>{details.business_location_name}</li>
                     </ul>
                     <h5>
                       <i className="icon-material-outline-business-center"></i>
                       &nbsp;
-                      {details.categories}
+                      {details.actual_category_name}&nbsp;Photographer
                     </h5>
                     &nbsp;
                     <span className="dashboard-status-button utf-job-status-item green">
                       <i className="icon-material-outline-business-center"></i>
-                      &nbsp;Full Time
+                      &nbsp;{details.work_schedule}
                     </span>
                   </div>
                 </div>
-                <div class="utf-right-side">
-                  <div class="salary-box">
-                    <Link to="#" class="button apply-now-button margin-top-0">
+                {/* <div className="utf-right-side">
+                  <div className="salary-box">
+                    <Link to="/" className="button  margin-top-0">
                       Book&nbsp;{details.name}
-                      <i class="icon-feather-chevron-right"></i>
+                      <i className="icon-feather-chevron-right"></i>
                     </Link>
-                    {/* <a href="#" class="button save-job-btn margin-top-20">
-                      Book Sam <i class="icon-feather-chevron-right"></i>
-                    </a> */}
+                    <a href="#" className="button save-job-btn margin-top-20">
+                      Book Sam <i className="icon-feather-chevron-right"></i>
+                    </a>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -223,7 +248,7 @@ const PhotographerDetails = (props) => {
                 <div className="utf-right-side">
                   <div className="salary-box">
                     <div className="salary-amount">
-                      KES {details.rate_min} - KES {details.rate_max}
+                      KES {details.min_rate} - KES {details.max_rate}
                     </div>
                   </div>
                 </div>
@@ -248,18 +273,18 @@ const PhotographerDetails = (props) => {
                 <form method="post" name="contactform" id="contact">
                   <div className="utf-centered-button margin-top-10">
                     <Link className="apply-now-button popup-with-zoom-anim margin-top-0">
-                      Book&nbsp;{details.name}
+                      Book&nbsp;{details.business_name}
                       <i className="icon-feather-chevron-right"></i>
                     </Link>
                   </div>
                 </form>
               </div>
-              <div className="utf-sidebar-widget-item">
+              {/* <div className="utf-sidebar-widget-item">
                 <h3>Working Hours</h3>
                 <div className="utf-tags-container-item">
                   {photographer.workdays.map((w, i) => (
                     <div className="tag" key={i}>
-                      {/* <input type="checkbox" id="tag4" /> */}
+                      <input type="checkbox" id="tag4" />
                       <label for="tag4">
                         {w.day}&nbsp;:&nbsp;{w.time}
                       </label>
@@ -267,7 +292,7 @@ const PhotographerDetails = (props) => {
                   ))}
                 </div>
                 <div className="clearfix"></div>
-              </div>
+              </div> */}
 
               <div className="utf-sidebar-widget-item">
                 <h3>Bookmark This Photographer</h3>

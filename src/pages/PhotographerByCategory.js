@@ -13,10 +13,10 @@ const Photographers = () => {
   return (
     <>
       {/* <Navigation /> */}
-      <div id="titlebar" class="gradient">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
+      <div id="titlebar" className="gradient">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
               <h2>Category Name (45)</h2>
               <nav id="breadcrumbs">
                 <ul>
@@ -30,21 +30,21 @@ const Photographers = () => {
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-3 col-lg-4">
-            <div class="utf-sidebar-container-aera">
-              <div class="utf-sidebar-widget-item">
-                <div class="utf-detail-banner-add-section">
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-3 col-lg-4">
+            <div className="utf-sidebar-container-aera">
+              <div className="utf-sidebar-widget-item">
+                <div className="utf-detail-banner-add-section">
                   <a href="#">
                     <img src="images/banner-add-2.jpg" alt="banner-add-2" />
                   </a>
                 </div>
               </div>
-              <div class="utf-sidebar-widget-item">
+              <div className="utf-sidebar-widget-item">
                 <h3>Category</h3>
                 <select
-                  class="selectpicker"
+                  className="selectpicker"
                   data-live-search="true"
                   data-selected-text-format="count"
                   data-size="7"
@@ -58,38 +58,38 @@ const Photographers = () => {
                 </select>
               </div>
 
-              <div class="utf-sidebar-widget-item">
+              <div className="utf-sidebar-widget-item">
                 <h3>Photographer Type</h3>
-                <div class="utf-radio-btn-list">
-                  <div class="checkbox">
+                <div className="utf-radio-btn-list">
+                  <div className="checkbox">
                     <input type="checkbox" id="chekcbox1" checked />
                     <label for="chekcbox1">
-                      <span class="checkbox-icon"></span> Full Time
+                      <span className="checkbox-icon"></span> Full Time
                     </label>
                   </div>
-                  <div class="checkbox">
+                  <div className="checkbox">
                     <input type="checkbox" id="chekcbox2" />
                     <label for="chekcbox2">
-                      <span class="checkbox-icon"></span> Part Time
+                      <span className="checkbox-icon"></span> Part Time
                     </label>
                   </div>
-                  <div class="checkbox">
+                  <div className="checkbox">
                     <input type="checkbox" id="chekcbox3" />
                     <label for="chekcbox3">
-                      <span class="checkbox-icon"></span> Freelancer
+                      <span className="checkbox-icon"></span> Freelancer
                     </label>
                   </div>
                 </div>
               </div>
-              <div class="clearfix"></div>
-              <div class="utf-sidebar-widget-item">
+              <div className="clearfix"></div>
+              <div className="utf-sidebar-widget-item">
                 <h3>Select Date</h3>
-                <div class="margin-top-25"></div>
+                <div className="margin-top-25"></div>
                 <input type="date" name="Book Photographer" required />
               </div>
 
-              <div class="utf-sidebar-widget-item">
-                <div class="utf-detail-banner-add-section">
+              <div className="utf-sidebar-widget-item">
+                <div className="utf-detail-banner-add-section">
                   <a href="#">
                     <img src="images/banner-add-2.jpg" alt="banner-add-2" />
                   </a>
@@ -97,14 +97,14 @@ const Photographers = () => {
               </div>
             </div>
           </div>
-          <div class="col-xl-9 col-lg-8">
-            <div class="utf-notify-box-aera margin-top-10">
-              <div class="utf-switch-container-item">
+          <div className="col-xl-9 col-lg-8">
+            <div className="utf-notify-box-aera margin-top-10">
+              <div className="utf-switch-container-item">
                 <span>Showing 1-10 of 50 Photographer Results :</span>
               </div>
-              <div class="sort-by">
+              <div className="sort-by">
                 <span>Sort By:</span>
-                <select class="selectpicker hide-tick">
+                <select className="selectpicker hide-tick">
                   <option>A to Z</option>
                   <option>Newest</option>
                   <option>Oldest</option>
@@ -112,24 +112,24 @@ const Photographers = () => {
                 </select>
               </div>
             </div>
-            <div class="utf-listings-container-part compact-list-layout margin-top-35">
+            <div className="utf-listings-container-part compact-list-layout margin-top-35">
               {photographers.map((p, i) => (
                 <OtherPhotographerLisiting key={i} p={p} />
               ))}
             </div>
-            <div class="clearfix"></div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="utf-pagination-container-aera margin-top-30 margin-bottom-60">
-                  <nav class="pagination">
+            <div className="clearfix"></div>
+            <div className="row">
+              <div className="col-md-12">
+                <div className="utf-pagination-container-aera margin-top-30 margin-bottom-60">
+                  <nav className="pagination">
                     <ul>
-                      <li class="utf-pagination-arrow">
+                      <li className="utf-pagination-arrow">
                         <a href="#">
-                          <i class="icon-material-outline-keyboard-arrow-left"></i>
+                          <i className="icon-material-outline-keyboard-arrow-left"></i>
                         </a>
                       </li>
                       <li>
-                        <a href="#" class="current-page">
+                        <a href="#" className="current-page">
                           1
                         </a>
                       </li>
@@ -139,9 +139,9 @@ const Photographers = () => {
                       <li>
                         <a href="#">3</a>
                       </li>
-                      <li class="utf-pagination-arrow">
+                      <li className="utf-pagination-arrow">
                         <a href="#">
-                          <i class="icon-material-outline-keyboard-arrow-right"></i>
+                          <i className="icon-material-outline-keyboard-arrow-right"></i>
                         </a>
                       </li>
                     </ul>

@@ -19,6 +19,8 @@ const Home = () => {
     return () => {
       //   cleanup;
     };
+
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -114,7 +116,7 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            {categories.map((c, i) => (
+            {categories.slice(0, 8).map((c, i) => (
               <div className="col-xl-3 col-md-6 col-lg-4" key={i}>
                 <Link
                   to="/"
@@ -174,7 +176,7 @@ const Home = () => {
                 <h4>Chat to Us Online</h4>
                 <p>Chat to us online if you have any question.</p>
                 <Link
-                  href="javascript:void(0);"
+                  to="/"
                   className="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10"
                 >
                   Click Here to Chat
@@ -195,7 +197,7 @@ const Home = () => {
                   needs.
                 </p>
                 <Link
-                  to=""
+                  to="/"
                   className="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10"
                 >
                   Contact Us <i className="icon-feather-chevrons-right"></i>
@@ -214,7 +216,7 @@ const Home = () => {
                   Visit our Blog page and know more about news and career tips
                 </p>
                 <Link
-                  to=""
+                  to="/"
                   className="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10"
                 >
                   Read Blog Post <i className="icon-feather-chevrons-right"></i>

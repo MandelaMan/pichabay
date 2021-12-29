@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Footer from "./components/layout/Footer";
 
 import { GlobalProvider } from "./context/GlobalState";
 import AboutUs from "./pages/AboutUs";

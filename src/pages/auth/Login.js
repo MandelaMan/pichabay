@@ -78,25 +78,18 @@ const Login = () => {
                         })}
                       />
                     </div>
-                    {/* <div className="checkbox margin-top-0">
-                      <input type="checkbox" id="two-step0" />
-                      <label htmlFor="two-step0">
-                        <span className="checkbox-icon"></span> I Have Read and
-                        Agree to the <Link to="/">Terms &amp; Conditions</Link>
-                      </label>
-                    </div> */}
                     <button
                       className="button full-width utf-button-sliding-icon ripple-effect"
                       type="submit"
                     >
                       Log in <i className="icon-feather-chevron-right"></i>
                     </button>
+                    <div className="margin-top-20 centered">
+                      <Link to="/">Forgot Password?</Link>
+                    </div>
                   </form>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-xl-4 col-12"></div>
             </div>
           </div>
         </div>

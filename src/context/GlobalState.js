@@ -5,6 +5,7 @@ import {
   encryptData,
   decryptData,
   readJwt,
+  baseURL,
   addCookie,
   deleteCookie,
 } from "../utils/helpers";
@@ -29,9 +30,6 @@ export const GlobalProvider = ({ children }) => {
   const history = createBrowserHistory();
 
   const [state, dispatch] = useReducer(AppReducer, initialState);
-
-  const baseURL = "http://localhost:81/kliks/v1/api";
-  // const baseURL = "https://www.pichabay.com/v1/api";
 
   async function fetchCategories() {
     try {
@@ -136,9 +134,9 @@ export const GlobalProvider = ({ children }) => {
 
           setLoadingStatus(false);
 
-          history.push("/");
-          window.location.reload();
-        }, 200);
+          // history.push("/create-account");
+          // window.location.reload();
+        }, 500);
       }
     } catch (error) {}
   }
@@ -147,6 +145,10 @@ export const GlobalProvider = ({ children }) => {
     try {
       localStorage.removeItem("PLUD");
       window.location.reload();
+
+      const info = {};
+
+      setGlobalInfo(info);
 
       setTimeout(function () {
         checkLoginStatus();
@@ -177,17 +179,18 @@ export const GlobalProvider = ({ children }) => {
           payload: res.data,
         });
 
-        console.log(res.data);
-        // return true;
+        setTimeout(function () {
+          if (history.location.pathname === "/") {
+            history.push("/book-a-photographer");
+            window.location.reload();
+          }
+
+          setLoadingStatus(false);
+        }, 1000);
       }
     } catch (error) {
       // console.log(error.message);
     }
-
-    history.push("/photographers");
-    window.location.reload();
-
-    // setTimeout(setLoadingStatus(false), 17000);
   }
 
   async function fetchHomePhotographer() {

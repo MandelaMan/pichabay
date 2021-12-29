@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f825e33c.chunk.css",
+    "main.js": "/static/js/main.e2fc9feb.chunk.js",
+    "main.js.map": "/static/js/main.e2fc9feb.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cda74020.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cda74020.js.map",
+    "static/css/2.d4115035.chunk.css": "/static/css/2.d4115035.chunk.css",
+    "static/js/2.122a9e1d.chunk.js": "/static/js/2.122a9e1d.chunk.js",
+    "static/js/2.122a9e1d.chunk.js.map": "/static/js/2.122a9e1d.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.d4115035.chunk.css.map": "/static/css/2.d4115035.chunk.css.map",
+    "static/css/main.f825e33c.chunk.css.map": "/static/css/main.f825e33c.chunk.css.map",
+    "static/js/2.122a9e1d.chunk.js.LICENSE.txt": "/static/js/2.122a9e1d.chunk.js.LICENSE.txt",
+    "static/media/bg_user.f914290c.jpg": "/static/media/bg_user.f914290c.jpg",
+    "static/media/mobile.scss": "/static/media/subscribe_bg.6876678b.jpg",
+    "static/media/company_logo_1.5a5a1051.png": "/static/media/company_logo_1.5a5a1051.png",
+    "static/media/home-background.dcced57d.jpg": "/static/media/home-background.dcced57d.jpg",
+    "static/media/logo.c90c0482.png": "/static/media/logo.c90c0482.png",
+    "static/media/me.5a5a1051.png": "/static/media/me.5a5a1051.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cda74020.js",
+    "static/css/2.d4115035.chunk.css",
+    "static/js/2.122a9e1d.chunk.js",
+    "static/css/main.f825e33c.chunk.css",
+    "static/js/main.e2fc9feb.chunk.js"
+  ]
+}

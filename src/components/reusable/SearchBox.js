@@ -169,7 +169,7 @@ const SearchBox = () => {
               Trending Keywords :&nbsp;
             </span>
             {categories.slice(0, 5).map((c, i) => (
-              <Link to={`/category/${c.slug}`}>
+              <Link to={`/category/${c.slug}`} key={i}>
                 {c.name}
                 {history.location.pathname !== "/" && <>,&nbsp;</>}
               </Link>
