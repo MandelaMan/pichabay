@@ -56,14 +56,11 @@ const Navigation = () => {
               <div className="clearfix"></div>
             </div>
             <div class="utf-right-side">
-              {/* <div class="utf-header-widget-item">
-                <a
-                  href="#utf-signin-dialog-block"
-                  class="popup-with-zoom-anim log-in-button"
-                >
-                  <i class="icon-feather-log-in"></i> <span>Login</span>
-                </a>{" "}
-              </div> */}
+              <div class="utf-header-widget-item">
+                <Link to="/login" className="log-in-button">
+                  <i className="icon-feather-log-in"></i> <span>Log In</span>
+                </Link>
+              </div>
               {/* <div class="utf-header-widget-item">
                 <div class="utf-header-notifications user-menu">
                   <div class="utf-header-notifications-trigger user-profile-title">

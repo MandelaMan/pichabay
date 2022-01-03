@@ -20,154 +20,150 @@ const FooterLinks = () => {
                   </p>
                 </div>
               </div>
-
               <div className="col-xl-2 col-md-3 col-sm-6">
                 <div className="utf-footer-item-links">
                   <h3>Title</h3>
                   <ul>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Title</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Title</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Title</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Title</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Title</span>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
               </div>
-
               <div className="col-xl-2 col-md-3 col-sm-6">
                 <div className="utf-footer-item-links">
                   <h3>Title</h3>
                   <ul>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Title</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Title</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Title</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Title</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Title</span>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
               </div>
-
               <div className="col-xl-2 col-md-3 col-sm-6">
                 <div className="utf-footer-item-links">
                   <h3>Resources</h3>
                   <ul>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>My Account</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Support</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="how-it-works.html">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>How It Works</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Login</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Book Photographer</span>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
               </div>
-
               <div className="col-xl-2 col-md-3 col-sm-6">
                 <div className="utf-footer-item-links">
                   <h3>Quick Links</h3>
                   <ul>
                     <li>
-                      <a href="faqs.html">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>FAQs</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="about-us.html">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>About Us</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Contact Us</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Privacy Policy</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="/">
                         <i className="icon-feather-chevron-right"></i>{" "}
                         <span>Term & Condition</span>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>

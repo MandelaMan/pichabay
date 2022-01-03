@@ -93,7 +93,9 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <Footer />
+        <div id="footer">
+          <Footer />
+        </div>
       </>
     );
   }
