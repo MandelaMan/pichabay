@@ -109,7 +109,7 @@ export const GlobalProvider = ({ children }) => {
 
           history.push("/");
           window.location.reload();
-        }, 200);
+        }, 1000);
       }
     } catch (error) {}
   }
@@ -130,10 +130,10 @@ export const GlobalProvider = ({ children }) => {
         localStorage.PLUD = encryptData(res.data.token);
 
         setTimeout(function () {
-          checkLoginStatus();
-
           setLoadingStatus(false);
-        }, 500);
+
+          checkLoginStatus();
+        }, 1000);
       }
     } catch (error) {}
   }
@@ -149,7 +149,7 @@ export const GlobalProvider = ({ children }) => {
 
       setTimeout(function () {
         checkLoginStatus();
-      }, 200);
+      }, 1000);
     } catch (error) {
       console.log(error.message);
     }

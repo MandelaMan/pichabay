@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Navigation from "../components/layout/Navigation";
 import OtherPhotographerLisiting from "../components/reusable/OtherPhotographerLisiting";
-import SearchBox from "../components/reusable/SearchBox";
-import { chosen_photographers, categories } from "../utils/data";
+import { categories } from "../utils/data";
 import { GlobalContext } from "../context/GlobalState";
 import FooterLinks from "../components/layout/FooterLinks";
+import Footer from "../components/layout/Footer";
 
 const Photographers = () => {
   const { photographers } = useContext(GlobalContext);
@@ -36,9 +35,9 @@ const Photographers = () => {
             <div className="utf-sidebar-container-aera">
               <div className="utf-sidebar-widget-item">
                 <div className="utf-detail-banner-add-section">
-                  <a href="#">
+                  <Link to="/">
                     <img src="images/banner-add-2.jpg" alt="banner-add-2" />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="utf-sidebar-widget-item">
@@ -57,7 +56,6 @@ const Photographers = () => {
                   ))}
                 </select>
               </div>
-
               <div className="utf-sidebar-widget-item">
                 <h3>Photographer Type</h3>
                 <div className="utf-radio-btn-list">
@@ -90,9 +88,9 @@ const Photographers = () => {
 
               <div className="utf-sidebar-widget-item">
                 <div className="utf-detail-banner-add-section">
-                  <a href="#">
+                  <Link to="/">
                     <img src="images/banner-add-2.jpg" alt="banner-add-2" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -124,25 +122,25 @@ const Photographers = () => {
                   <nav className="pagination">
                     <ul>
                       <li className="utf-pagination-arrow">
-                        <a href="#">
+                        <Link to="/">
                           <i className="icon-material-outline-keyboard-arrow-left"></i>
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="#" className="current-page">
+                        <Link to="/" className="current-page">
                           1
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="#">2</a>
+                        <Link to="/">2</Link>
                       </li>
                       <li>
-                        <a href="#">3</a>
+                        <Link to="/">3</Link>
                       </li>
                       <li className="utf-pagination-arrow">
-                        <a href="#">
+                        <Link to="/">
                           <i className="icon-material-outline-keyboard-arrow-right"></i>
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </nav>
@@ -153,6 +151,7 @@ const Photographers = () => {
         </div>
       </div>
       <FooterLinks />
+      <Footer />
     </>
   );
 };

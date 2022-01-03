@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import { GlobalContext } from "../context/GlobalState";
 
-import { chosen_photographers, categories } from "../utils/data";
+import { categories } from "../utils/data";
 import SearchBox from "../components/reusable/SearchBox";
 import OtherPhotographerLisiting from "../components/reusable/OtherPhotographerLisiting";
 

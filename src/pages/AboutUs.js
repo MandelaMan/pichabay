@@ -1,11 +1,12 @@
 import React from "react";
 import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
+import FooterLinks from "../components/layout/FooterLinks";
+import Footer from "../components/layout/Footer";
 const AboutUs = () => {
   return (
     <>
       <Loader />
-      {/* <Navigation /> */}
       <div id="titlebar" className="gradient">
         <div className="container">
           <div className="row">
@@ -14,10 +15,10 @@ const AboutUs = () => {
               <nav id="breadcrumbs">
                 <ul>
                   <li>
-                    <a href="index-1.html">Home</a>
+                    <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <a href="#">Pages</a>
+                    <Link to="/">Pages</Link>
                   </li>
                   <li>About Us</li>
                 </ul>
@@ -26,7 +27,6 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-
       <div className="section margin-top-65 padding-bottom-55">
         <div className="container">
           <div className="row">
@@ -123,7 +123,6 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-
       <div className="section padding-top-60 padding-bottom-50">
         <div className="container">
           <div className="row">
@@ -189,6 +188,8 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+      <FooterLinks />
+      <Footer />
     </>
   );
 };

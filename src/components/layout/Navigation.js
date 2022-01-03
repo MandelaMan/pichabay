@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import logo from "../../img/logo.png";
@@ -6,8 +6,11 @@ import { GlobalContext } from "../../context/GlobalState";
 import me from "../../img/me.png";
 
 const Navigation = () => {
+  const node = useRef();
+
   const { isLoggedIn, user_info, logOutUser } = useContext(GlobalContext);
-  // console.log(localStorage.hasOwnProperty("PLUD"));
+
+  const [menu, setMenu] = useState(null);
 
   const history = createBrowserHistory();
 
@@ -25,6 +28,23 @@ const Navigation = () => {
       link: "/contact-us",
     },
   ];
+
+  const handleClick = (e) => {
+    if (!node.current.contains(e.target)) {
+      setMenu(null);
+      return;
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <>
@@ -55,92 +75,97 @@ const Navigation = () => {
               </nav>
               <div className="clearfix"></div>
             </div>
-            <div class="utf-right-side">
-              <div class="utf-header-widget-item">
-                <Link to="/login" className="log-in-button">
-                  <i className="icon-feather-log-in"></i> <span>Log In</span>
-                </Link>
+            <div className="utf-right-side">
+              <div className="utf-header-widget-item">
+                {!isLoggedIn ? (
+                  <Link to="/login" className="log-in-button">
+                    <i className="icon-feather-log-in"></i> <span>Log In</span>
+                  </Link>
+                ) : (
+                  <div className="utf-header-notifications user-menu">
+                    <div className="utf-header-notifications-trigger user-profile-title">
+                      <Link to="/">
+                        <div className="user-avatar status-online">
+                          <img src={me} alt="" />
+                        </div>
+                        <div className="user-name">
+                          Hi,&nbsp;{user_info.username}!
+                        </div>
+                      </Link>
+                    </div>
+                    <div className="utf-header-notifications-dropdown-block">
+                      <ul className="utf-user-menu-dropdown-nav">
+                        {user_info.account_type === 1 && (
+                          <li>
+                            <Link to="/">
+                              <i className="icon-material-outline-dashboard"></i>
+                              Dashboard
+                            </Link>
+                          </li>
+                        )}
+                        {user_info.account_type === 2 && (
+                          <li>
+                            <Link to="/">
+                              <i className="icon-material-outline-dashboard"></i>
+                              Dashboard
+                            </Link>
+                          </li>
+                        )}
+                        <li>
+                          <Link to="/">
+                            <i className="icon-feather-user"></i> Edit Profile
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="" onClick={() => logOutUser()}>
+                            <i className="icon-material-outline-power-settings-new"></i>
+                            Logout
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                )}
               </div>
-              {/* <div class="utf-header-widget-item">
-                <div class="utf-header-notifications user-menu">
-                  <div class="utf-header-notifications-trigger user-profile-title">
-                    <a href="#">
-                      <div class="user-avatar status-online">
-                        <img src="images/user_small_1.jpg" alt="" />{" "}
-                      </div>
-                      <div class="user-name">Hi, Sam!</div>
-                    </a>
-                  </div>
-                  <div class="utf-header-notifications-dropdown-block">
-                    <ul class="utf-user-menu-dropdown-nav">
-                      <li>
-                        <a href="#">
-                          <i class="icon-material-outline-dashboard"></i>{" "}
-                          Dashboard
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="icon-line-awesome-user-secret"></i> Manage
-                          Your Work
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="icon-material-outline-group"></i> Work Done
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="icon-material-outline-star-border"></i>{" "}
-                          Bookmark Your Work
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="icon-feather-user"></i> Edit Profile
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="icon-material-outline-power-settings-new"></i>
-                          Logout
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div> */}
-              <span class="mmenu-trigger">
-                <button class="hamburger utf-hamburger-collapse-item">
-                  <span class="utf-hamburger-box-item">
-                    <span
-                      class="utf-hamburger-inner-item"
-                      style={{ marginTop: "-5px" }}
-                    ></span>
-                  </span>
-                </button>
-              </span>
+              {!menu ? (
+                <span className="mmenu-trigger">
+                  <button
+                    className="hamburger utf-hamburger-collapse-item"
+                    onClick={() => setMenu(!menu)}
+                  >
+                    <span className="utf-hamburger-box-item">
+                      <span
+                        className="utf-hamburger-inner-item"
+                        style={{ marginTop: "-5px" }}
+                      ></span>
+                    </span>
+                  </button>
+                </span>
+              ) : null}
             </div>
           </div>
         </div>
       </header>
-      {/* <div className="mobile-menu">
-        <ul>
-          {navItems.map((n, i) => (
-            <li key={i}>
-              <Link
-                className={`${
-                  history.location.pathname === n.link ? "current" : ""
-                }`}
-                to={n.link}
-              >
-                {n.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div> */}
+      <div ref={node}>
+        {menu ? (
+          <div className="mobile-menu">
+            <ul>
+              {navItems.map((n, i) => (
+                <li key={i}>
+                  <Link
+                    className={`${
+                      history.location.pathname === n.link ? "current" : ""
+                    }`}
+                    to={n.link}
+                  >
+                    {n.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+      </div>
       <div className="clearfix"></div>
     </>
   );

@@ -22,6 +22,8 @@ import {
   deleteCookie,
 } from "../utils/helpers";
 import PhotographerNotFound from "../components/reusable/PhotographerNotFound";
+import FooterLinks from "../components/layout/FooterLinks";
+import Footer from "../components/layout/Footer";
 
 const PhotographerDetails = (props) => {
   const { photographers } = useContext(GlobalContext);
@@ -373,6 +375,8 @@ const PhotographerDetails = (props) => {
           </div>
         </div>
       </div>
+      <FooterLinks />
+      <Footer />
     </>
   );
 };

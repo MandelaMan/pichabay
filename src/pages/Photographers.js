@@ -7,6 +7,8 @@ import { GlobalContext } from "../context/GlobalState";
 import _ from "lodash";
 import Pagination from "../components/reusable/Pagination";
 import InLoader from "../components/reusable/InLoaders";
+import FooterLinks from "../components/layout/FooterLinks";
+import Footer from "../components/layout/Footer";
 
 const Photographers = () => {
   const { searched_photographers, searchPhotographer } =
@@ -156,6 +158,8 @@ const Photographers = () => {
           </div>
         </div>
       </div>
+      <FooterLinks />
+      <Footer />
     </>
   );
 };

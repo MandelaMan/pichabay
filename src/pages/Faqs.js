@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FooterLinks from "../components/layout/FooterLinks";
+import Footer from "../components/layout/Footer";
 
 const Faqs = () => {
   return (
@@ -200,8 +201,8 @@ const Faqs = () => {
           </div>
         </div>
       </div>
-
       <FooterLinks />
+      <Footer />
     </>
   );
 };
