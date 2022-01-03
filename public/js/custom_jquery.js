@@ -5,50 +5,50 @@
     /*--------------------------------------------------*/
     /*  Mobile Navigation Menu
         /*--------------------------------------------------*/
-    $(function () {
-      function mmenuInit() {
-        var wi = $(window).width();
-        if (wi <= "1099") {
-          $(".mmenu-init").remove();
-          $("#navigation")
-            .clone()
-            .addClass("mmenu-init")
-            .insertBefore("#navigation")
-            .removeAttr("id")
-            .removeClass("style-1 style-2")
-            .find("ul, div")
-            .removeClass(
-              "style-1 style-2 mega-menu mega-menu-content mega-menu-section"
-            )
-            .removeAttr("id");
-          $(".mmenu-init").find("ul").addClass("mm-listview");
-          $(".mmenu-init").find(".mobile-styles .mm-listview").unwrap();
+    // $(function () {
+    //   function mmenuInit() {
+    //     var wi = $(window).width();
+    //     if (wi <= "1099") {
+    //       $(".mmenu-init").remove();
+    //       $("#navigation")
+    //         .clone()
+    //         .addClass("mmenu-init")
+    //         .insertBefore("#navigation")
+    //         .removeAttr("id")
+    //         .removeClass("style-1 style-2")
+    //         .find("ul, div")
+    //         .removeClass(
+    //           "style-1 style-2 mega-menu mega-menu-content mega-menu-section"
+    //         )
+    //         .removeAttr("id");
+    //       $(".mmenu-init").find("ul").addClass("mm-listview");
+    //       $(".mmenu-init").find(".mobile-styles .mm-listview").unwrap();
 
-          $(".mmenu-init").mmenu(
-            {
-              counters: true,
-            },
-            {
-              offCanvas: {
-                pageNodetype: "#wrapper",
-              },
-            }
-          );
+    //       $(".mmenu-init").mmenu(
+    //         {
+    //           counters: true,
+    //         },
+    //         {
+    //           offCanvas: {
+    //             pageNodetype: "#wrapper",
+    //           },
+    //         }
+    //       );
 
-          var mmenuAPI = $(".mmenu-init").data("mmenu");
-          var $icon = $(".mmenu-trigger .hamburger");
+    //       var mmenuAPI = $(".mmenu-init").data("mmenu");
+    //       var $icon = $(".mmenu-trigger .hamburger");
 
-          $(".mmenu-trigger").on("click", function () {
-            mmenuAPI.open();
-          });
-        }
-        $(".mm-next").addClass("mm-fullsubopen");
-      }
-      mmenuInit();
-      $(window).resize(function () {
-        mmenuInit();
-      });
-    });
+    //       $(".mmenu-trigger").on("click", function () {
+    //         mmenuAPI.open();
+    //       });
+    //     }
+    //     $(".mm-next").addClass("mm-fullsubopen");
+    //   }
+    //   mmenuInit();
+    //   $(window).resize(function () {
+    //     mmenuInit();
+    //   });
+    // });
 
     /*--------------------------------------------------*/
     /*  Sticky Header

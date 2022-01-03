@@ -1,7 +1,6 @@
 import React from "react";
-import Navigation from "../components/layout/Navigation";
 import Loader from "../components/Loader";
-
+import { Link } from "react-router-dom";
 const AboutUs = () => {
   return (
     <>
@@ -144,74 +143,45 @@ const AboutUs = () => {
               <div className="col-md-12">
                 <div className="utf-logo-carousel-block">
                   <div className="utf-carousel-logo-item">
-                    {" "}
-                    <a
-                      href="javascript:void(0);"
-                      target="_blank"
-                      title="javascript:void(0)"
-                    >
+                    <Link to="">
                       <img src="images/brand_logo_01.png" alt="" />
-                    </a>{" "}
+                    </Link>
                   </div>
                   <div className="utf-carousel-logo-item">
                     {" "}
-                    <a
-                      href="javascript:void(0);"
-                      target="_blank"
-                      title="javascript:void(0)"
-                    >
+                    <Link to="">
                       <img src="images/brand_logo_01.png" alt="" />
-                    </a>{" "}
+                    </Link>
                   </div>
                   <div className="utf-carousel-logo-item">
                     {" "}
-                    <a
-                      href="javascript:void(0);"
-                      target="_blank"
-                      title="javascript:void(0)"
-                    >
+                    <Link to="">
                       <img src="images/brand_logo_01.png" alt="" />
-                    </a>{" "}
+                    </Link>
                   </div>
                   <div className="utf-carousel-logo-item">
                     {" "}
-                    <a
-                      href="javascript:void(0);"
-                      target="_blank"
-                      title="javascript:void(0)"
-                    >
+                    <Link to="">
                       <img src="images/brand_logo_01.png" alt="" />
-                    </a>{" "}
+                    </Link>
                   </div>
                   <div className="utf-carousel-logo-item">
                     {" "}
-                    <a
-                      href="javascript:void(0);"
-                      target="_blank"
-                      title="javascript:void(0)"
-                    >
+                    <Link to="">
                       <img src="images/brand_logo_01.png" alt="" />
-                    </a>{" "}
+                    </Link>
                   </div>
                   <div className="utf-carousel-logo-item">
                     {" "}
-                    <a
-                      href="javascript:void(0);"
-                      target="_blank"
-                      title="javascript:void(0)"
-                    >
+                    <Link to="">
                       <img src="images/brand_logo_01.png" alt="" />
-                    </a>{" "}
+                    </Link>
                   </div>
                   <div className="utf-carousel-logo-item">
                     {" "}
-                    <a
-                      href="javascript:void(0);"
-                      target="_blank"
-                      title="javascript:void(0)"
-                    >
+                    <Link to="">
                       <img src="images/brand_logo_01.png" alt="" />
-                    </a>{" "}
+                    </Link>
                   </div>
                 </div>
               </div>

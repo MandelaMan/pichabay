@@ -25,8 +25,6 @@ const Home = () => {
 
   return (
     <>
-      {/* <Navigation /> */}
-
       <div className="intro-banner" data-background-image={home}>
         <div className="container">
           <div className="row">

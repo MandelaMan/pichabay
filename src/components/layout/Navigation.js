@@ -55,92 +55,95 @@ const Navigation = () => {
               </nav>
               <div className="clearfix"></div>
             </div>
-            <div
-              className="utf-right-side"
-              style={{ display: isLoggedIn ? "" : "none" }}
-            >
-              <div className="utf-header-widget-item">
-                <div className="utf-header-notifications user-menu">
-                  <div className="utf-header-notifications-trigger user-profile-title">
-                    <Link to="/">
-                      <div className="user-avatar status-online">
-                        <img src={me} alt="" />
+            <div class="utf-right-side">
+              {/* <div class="utf-header-widget-item">
+                <a
+                  href="#utf-signin-dialog-block"
+                  class="popup-with-zoom-anim log-in-button"
+                >
+                  <i class="icon-feather-log-in"></i> <span>Login</span>
+                </a>{" "}
+              </div> */}
+              {/* <div class="utf-header-widget-item">
+                <div class="utf-header-notifications user-menu">
+                  <div class="utf-header-notifications-trigger user-profile-title">
+                    <a href="#">
+                      <div class="user-avatar status-online">
+                        <img src="images/user_small_1.jpg" alt="" />{" "}
                       </div>
-                      <div className="user-name">
-                        Hi,&nbsp;{user_info.username}!
-                      </div>
-                    </Link>
+                      <div class="user-name">Hi, Sam!</div>
+                    </a>
                   </div>
-                  <div className="utf-header-notifications-dropdown-block">
-                    <ul className="utf-user-menu-dropdown-nav">
-                      {user_info.account_type === 1 && (
-                        <li>
-                          <Link to="/">
-                            <i className="icon-material-outline-dashboard"></i>
-                            Dashboard
-                          </Link>
-                        </li>
-                      )}
-
-                      {user_info.account_type === 2 && (
-                        <li>
-                          <Link to="/">
-                            <i className="icon-material-outline-dashboard"></i>
-                            Dashboard
-                          </Link>
-                        </li>
-                      )}
+                  <div class="utf-header-notifications-dropdown-block">
+                    <ul class="utf-user-menu-dropdown-nav">
                       <li>
-                        <Link to="/">
-                          <i className="icon-feather-user"></i> Edit Profile
-                        </Link>
+                        <a href="#">
+                          <i class="icon-material-outline-dashboard"></i>{" "}
+                          Dashboard
+                        </a>
                       </li>
                       <li>
-                        <Link to="" onClick={() => logOutUser()}>
-                          <i className="icon-material-outline-power-settings-new"></i>
+                        <a href="#">
+                          <i class="icon-line-awesome-user-secret"></i> Manage
+                          Your Work
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="icon-material-outline-group"></i> Work Done
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="icon-material-outline-star-border"></i>{" "}
+                          Bookmark Your Work
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="icon-feather-user"></i> Edit Profile
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="icon-material-outline-power-settings-new"></i>
                           Logout
-                        </Link>
+                        </a>
                       </li>
                     </ul>
                   </div>
                 </div>
-              </div>
-              <span className="mmenu-trigger">
-                <button
-                  className="hamburger utf-hamburger-collapse-item"
-                  type="button"
-                >
-                  <span className="utf-hamburger-box-item">
-                    <span className="utf-hamburger-inner-item"></span>
+              </div> */}
+              <span class="mmenu-trigger">
+                <button class="hamburger utf-hamburger-collapse-item">
+                  <span class="utf-hamburger-box-item">
+                    <span
+                      class="utf-hamburger-inner-item"
+                      style={{ marginTop: "-5px" }}
+                    ></span>
                   </span>
                 </button>
               </span>
             </div>
-            <div
-              className="utf-right-side"
-              style={{ display: isLoggedIn ? "none" : "" }}
-            >
-              <div className="utf-header-widget-item">
-                <Link to="/login" className="log-in-button">
-                  <i className="icon-feather-log-in"></i> <span>Log In</span>
-                </Link>
-                {/* <button className="popup-with-zoom-anim log-in-button">
-                 <i className="icon-feather-log-in"></i>{" "}
-                 <span>Log In</span>
-               </button> */}
-              </div>
-              {/* <div className="utf-header-widget-item">
-               <a
-                 href="#utf-signin-dialog-block"
-                 className="join-us-button"
-               >
-                 <span>Join Us Today</span>
-               </a>
-             </div> */}
-            </div>
           </div>
         </div>
       </header>
+      {/* <div className="mobile-menu">
+        <ul>
+          {navItems.map((n, i) => (
+            <li key={i}>
+              <Link
+                className={`${
+                  history.location.pathname === n.link ? "current" : ""
+                }`}
+                to={n.link}
+              >
+                {n.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div> */}
       <div className="clearfix"></div>
     </>
   );

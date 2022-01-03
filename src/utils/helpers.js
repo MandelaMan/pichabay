@@ -3,8 +3,8 @@ import jwt from "jwt-simple";
 import CryptoJS from "crypto-js";
 import { categories, counties } from "./data";
 
-export const baseURL = "http://localhost:81/kliks/v1/api";
-// const baseURL = "https://www.pichabay.com/v1/api";
+// export const baseURL = "http://localhost:81/kliks/v1/api";
+export const baseURL = "https://www.pichabay.com/v1/api";
 
 export const categoryName = (id) => {
   const category = categories.filter((item) => item.id === id);

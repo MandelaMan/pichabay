@@ -133,9 +133,6 @@ export const GlobalProvider = ({ children }) => {
           checkLoginStatus();
 
           setLoadingStatus(false);
-
-          // history.push("/create-account");
-          // window.location.reload();
         }, 500);
       }
     } catch (error) {}
@@ -179,14 +176,16 @@ export const GlobalProvider = ({ children }) => {
           payload: res.data,
         });
 
-        setTimeout(function () {
-          if (history.location.pathname === "/") {
-            history.push("/book-a-photographer");
-            window.location.reload();
-          }
+        if (history.location.pathname === "/") {
+          history.push("/book-a-photographer");
+          window.location.reload();
+        }
 
-          setLoadingStatus(false);
-        }, 1000);
+        if (history.location.pathname === "/book-a-photographer") {
+          setTimeout(function () {
+            setLoadingStatus(false);
+          }, 1000);
+        }
       }
     } catch (error) {
       // console.log(error.message);

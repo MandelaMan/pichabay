@@ -27,6 +27,7 @@ const PhotographerDetails = (props) => {
   const { photographers } = useContext(GlobalContext);
 
   const [details, setDetails] = useState([]);
+  const [packages, setPackages] = useState([]);
 
   const getDetails = async (code, name) => {
     try {
@@ -41,7 +42,30 @@ const PhotographerDetails = (props) => {
         config
       );
 
+      getPackages(res.data.id);
+
       setDetails(res.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const getPackages = async (id) => {
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      const res = await axios.get(
+        `${baseURL}/photographers/packages?id=${id}`,
+        config
+      );
+
+      console.log(res.data);
+
+      setPackages(res.data);
     } catch (error) {
       console.log(error.message);
     }
@@ -51,6 +75,8 @@ const PhotographerDetails = (props) => {
     getDetails(props.match.params.code, props.match.params.name);
 
     return () => {
+      setPackages([]);
+      setDetails([]);
       // cleanup;
     };
 
@@ -256,14 +282,14 @@ const PhotographerDetails = (props) => {
               <div className="utf-sidebar-widget-item">
                 <h3>Additional Packages</h3>
                 <div className="utf-radio-btn-list">
-                  {photographer.additional_packages.map((p, i) => (
+                  {packages.map((p, i) => (
                     <div className="checkbox">
                       <input type="checkbox" id={`chekcbox00${i}`} />
                       <label for={`chekcbox00${i}`}>
                         <span className="checkbox-icon"></span>
-                        {p.desc}&nbsp;
+                        {p.name}&nbsp;
                         <br />
-                        {p.price}&nbsp;
+                        KES&nbsp;{p.rate}&nbsp;
                       </label>
                     </div>
                   ))}
@@ -279,9 +305,9 @@ const PhotographerDetails = (props) => {
                   </div>
                 </form>
               </div>
+
               {/* <div className="utf-sidebar-widget-item">
-                <h3>Working Hours</h3>
-                <div className="utf-tags-container-item">
+                <h3>Working Hours</h3>                
                   {photographer.workdays.map((w, i) => (
                     <div className="tag" key={i}>
                       <input type="checkbox" id="tag4" />
